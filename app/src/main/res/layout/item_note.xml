@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/itemNoteRoot"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/noteText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="X"
+            android:textColor="#FF0000"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="30sp"
+            app:cornerRadius="10dp"
+            android:backgroundTint="#C3C3C3"/>
+
+    </LinearLayout>
+
+</layout>
