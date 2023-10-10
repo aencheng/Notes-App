@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".NoteFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.project6.EditNotesViewModel" />
+    </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".NoteFragment">
+        android:orientation="vertical">
 
-        <!-- TODO: Update blank fragment layout -->
         <EditText
             android:id="@+id/editTitle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            android:hint="Title">
+            android:hint="Title"
+            android:text="@{viewModel.note.noteName}"
+            android:inputType="text" >
 
         </EditText>
         <EditText
@@ -25,7 +31,9 @@
             android:layout_height="0dp"
             android:layout_weight="8"
             android:layout_margin="10dp"
-            android:hint="Description">
+            android:hint="Description"
+            android:text="@{viewModel.note.noteContent}"
+            android:inputType="text">
 
         </EditText>
 
@@ -37,6 +45,7 @@
             app:cornerRadius="10dp"
             android:layout_margin="10dp"
             android:text="SAVE"
+            android:onClick="@{() -> viewModel.updateNote() }"
             >
 
         </Button>
